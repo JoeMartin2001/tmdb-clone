@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* html {
+    /* border: 1px solid red; */
+
+/* } */ 
+body {
+    overflow-y: hidden;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.header {
+    height: 10vh;
+    width: 100%;
+    background-color: #1d3557;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.header nav {
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .header nav h1 {
+    color: #ffffff;
+} */
+
+.header nav h1 a {
+    text-decoration: none;
+    color: #4cc9f0;
+}
+
+.header nav ul {
+    /* width: 400px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    /* border: 1px solid red; */
+}
+
+.header nav ul li {
+    margin: 0 20px;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    /* font-weight: bolder; */
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+}
+
+.watchlist_div {
+    position: relative;
+}
+
+.watchlist_div span {
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    background-color: red;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 1px 3px;
+}
+
+.watchlist_icon {
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.search_container {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    overflow: hidden;
+}
+
+.search_container input {
+    /* border: transparent; */
+    height: 100%;
+    border-top-left-radius: 99px;
+    border-bottom-left-radius: 99px;
+    outline: transparent;
+    border: transparent;
+    padding-left: 5%;
+    font-weight: 500;
+}
+
+.search_container input::placeholder {
+    color: lightgray;
+    font-weight: 500;
+}
+
+.search_container button {
+    width: 30px;
+    height: 100%;
+    background-color: #ffffff;
+    outline: transparent;
+    border: transparent;
+    border-top-right-radius: 99px;
+    border-bottom-right-radius: 99px;
+    cursor: pointer;
+}
+
+.search_container button img {
+    width: 50%;
+    height: 50%;
+}
+
+.main {
+    width: 100%;
+}
+
+.categories {
+    background-color: #1d3557;
+    width: 100%;
+    height: 5vh;
+}
+
+.categories ul {
+    list-style: none;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+.categories ul li {
+    cursor: pointer;
+}
+
+.categories ul li:hover {
+    color: #00c2a2;
+}
+
+.movies {
+    width: 100%;
+    /* height: 85vh; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* overflow-y: scroll;  */
+    /* border: 1px solid red; */
+}
+
+.movies a {
+    text-decoration: none;
+}
+
+.movie_card {
+    padding: 10px;
+    align-self: center;
+    height: 340px;
+    width: 250px;
+    margin: 15px;
+    overflow: hidden;
+    animation: fadeIn ease 0.5s;
+    -webkit-animation: fadeIn ease 0.5s;
+    -moz-animation: fadeIn ease 0.5s;
+    -o-animation: fadeIn ease 0.5s;
+    -ms-animation: fadeIn ease 0.5s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border-radius: 5px;
+}
+
+.movie_card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.movie_card img {
+    width: 100%;
+    height: 90%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.movie_card div {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie_card div h4 {
+    color: #000000;
+}
+
+.movie_card div .add_video_icon {
+    width: 25px;
+    height: 25px;
+}
+
+.modal-overlay {
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.modal {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 5px;
+    overflow-y: scroll;
+    transform: scale(0, 0);
+    transition: 0.2s ease-in-out;
+}
+
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid lightgray;
+}
+
+.modal-left img {
+    height: 96%;
+    width: 96%;
+}
+
+.modal-right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-right h1 {
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.modal-right-body {
+    padding: 2%;
+}
+
+.close-modal {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.watchlist_modal_movie_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.watchlist_modal_movie {
+    height: 320px;
+    width: 220px;
+    margin: 20px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.watchlist_modal_movie_container img {
+    height: 100%;
+    width: 100%;
+}
+
+.delete_watchlist_movie {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete_watchlist_movie:hover {
+    background-color: black;
+    color: #ffffff;
+}
+
+@media (max-width: 840px) {
+    .movie_card {
+        width: 45%;
+        height: 400px;
+    }
+
+    .watchlist_modal_movie_container {
+        justify-content: center;
+    }
+    
+    .watchlist_modal_movie {
+        width: 90%;
+        height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header nav h1 a {
+        font-size: smaller;
+    }
+    .modal {
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+    .movie_card {
+        width: 90%;
+        height: 400px;
+    }
+
+    .watchlist_modal_movie {
+        width: 90%;
+        height: 400px;
+    }
+}

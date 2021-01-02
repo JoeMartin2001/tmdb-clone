@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <%- include('partials/header.ejs') -%>
+        <div class="main">
+            <div class="categories">
+                <ul>    
+                    <li>Trending</li>
+                    <li>Popular</li>
+                    <li>Top Rated</li>
+                    <li>Upcoming</li>
+                </ul>
+            </div>
+            <div class="movies">
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal-overlay">
+        <div class="modal"></div>
+    </div>
+
+
+    <script src="scripts/root.js"></script>
+    <script src="app/main.js"></script>
+</body>
+</html>
