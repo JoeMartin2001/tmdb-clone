@@ -19,6 +19,6 @@ app.get('/movie_details/:id', (req, res) => {
     console.log(req.params)
 })
 
-app.listen(process.env.PORT || 3000, '192.168.1.188', () => {
-    console.log('Listening on port 3000!')
+app.listen(process.env.PORT || 5000, () => {
+    console.log('Listening on port 5000!')
 })
