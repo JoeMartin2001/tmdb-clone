@@ -1,4 +1,4 @@
 # tmdb-clone
-TMDB clone with plain html css js!
+TMDB clone with ejs, and pure JS!
 
-https://desolate-river-37712.herokuapp.com/
+
